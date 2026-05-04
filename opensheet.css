@@ -1,0 +1,75 @@
+
+
+@keyframes fall {
+  from   { transform: translateY(0);     opacity: 1; }
+  to { transform: translateY(550px); opacity: 1; }
+}
+
+#physics-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 15;
+}
+
+.falling-image {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  pointer-events: none; /* change this too — see below */
+  z-index: 20;
+  animation: fall 1.5s ease-in forwards; /* 'forwards' already keeps final state */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#bg-current, #bg-next {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#bg-next {
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+#hint {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 999px;
+  font-family: sans-serif;
+  font-size: 14px;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 1s ease;
+  z-index: 10;
+}
+
+#hint.hidden {
+  opacity: 0;
+}

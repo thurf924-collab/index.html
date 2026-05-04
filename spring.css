@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url("spring.jpg");
+  background-size: cover; 
+  background-size: contain;     
+  background-position: center; 
+  background-repeat: no-repeat;
+
+}
+
+.my-div {
+  background-image: url("spring.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh; /* makes it full screen height */
+}
